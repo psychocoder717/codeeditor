@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html  data-theme="black" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Craft</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/46724d20dd.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                  }
+                }
+              }
+            }
+          </script>
+          <style type="text/tailwindcss">
+            @layer utilities {
+              .content-auto {
+                content-visibility: auto;
+              }
+            }
+          </style>
+          <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+          <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!-- <body > -->
+    <!-- <style>
+        @keyframes colorChange {
+            0% {
+                color: blue;
+            }
+
+            50% {
+                color: green;
+            }
+
+            100% {
+                color: red;
+            }
+
+        }
+
+        b {
+            animation: colorChange 2s infinite;
+        }
+    </style> -->
+
+ <div class="head">
+    <b>Code Craft</b> 
+        <div id="navbar">
+            <!-- <menu> --> 
+               
+                <!-- <!-- <ul class="nav nav-pills"> -->
+                    <li class="nav-item">
+                      <a class="btn btn-light btn-md" aria-current="page" 
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn btn-light btn-md" 
+                      href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn btn-light btn-md"
+                       href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"target="_blank">JS </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
+                Button trigger modal -->
+                <!-- <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Docs
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">HTML</button>
+                      <button class="dropdown-item" type="button">CSS</button>
+                      <button class="dropdown-item" type="button">JS</button>
+                    </div>
+                  </div>
+                <!-- <button type="button" class="btn btn-success btn-md" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Login
+                </button> --> -->
+
+                Modal
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text-dark">Login</h3>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com" autocomplete="off" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Enteryour password" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </menu>
+        </div>
+    </div> -->
+    <div class="buttondiv">
+        <input type="submit" class="my-button" value="Run" onclick="run()">
+        <div>
+            <button onmousedown="resetEditors()" class="resetbtn">Clear</button>
+        </div>
+
+    </div>
+    <div class="container">
+
+        <div class="left">
+            <label> <i class="fa-brands fa-html5" style="color: #FF4500;"></i>HTML</label>
+            <textarea id="html-code" onclick="handleTextareaBlur()" onmouseout="emptyplaceholder()"></textarea>
+
+            <label> <i class="fa-brands fa-css3" style="color:blue;"></i>CSS</label>
+            <textarea id="css-code" onclick="handleTextarea1Blur()" onmouseout="emptyplaceholder1()"></textarea>
+
+            <label> <i class="fa-brands fa-js" style="color:yellow;"></i>JAVASCRIPT</label>
+            <textarea id="javascript-code" onclick="handleTextarea2Blur()" onmouseout="emptyplaceholder2()"></textarea>
+        </div>
+        <div class="right">
+            <label> <i class="fa-solid fa-play" style="color:green;"></i>OUTPUT</label>
+            <iframe id="output" class="frameclass">
+            </iframe>
+        </div>
+    </div>
+    </div><footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            
+            <!-- Google -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #dd4b39;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #ac2bac;"
+              href="https://www.instagram.com/sahil__s___c/"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #0082ca;"
+              href="https://www.linkedin.com/in/sahil-chaudhari-6a0343225/"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #333333;"
+              href="https://github.com/Sahilchaudhari-dev"
+              role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          <!-- Section: Social media -->
+       
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style= "background-color: rgba(0, 0, 0, 0.2),width:100%;">
+          © 2023 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">CodeCraft.com</a>
+        </div>
+    </div>
+        <!-- Copyright -->
+    </section>
+
+      </footer>
+    
+    <script>
+        // function resetEditors() {
+        //     document.getElementById('html-code').value = '';
+        //     document.getElementById('css-code').value = '';
+        //     document.getElementById('javascript-code').value = '';
+        // }
+        function run() {
+            let htmlcode = document.getElementById("html-code").value;
+            let csscode = document.getElementById("css-code").value;    // for input
+            let javascriptcode = document.getElementById("javascript-code").value;
+            let output = document.getElementById("output");
+
+            output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>"; //  output.contentDocument.body.innerHTML  it manipulate the code within the <iframe>   innerHTML provide the feature to access and modifying the html content within the body
+            output.contentWindow.eval(javascriptcode);   //eval() function take input as string and execute it as javascript code
+        }
+        function handleTextareaBlur() {                             //The onblur attribute calls the handleTextareaBlur() JavaScript function when the textarea loses focus. This function checks if the textarea is empty, and if so, it restores the placeholder text.
+            var textarea = document.getElementById('html-code');
+            {
+                textarea.placeholder = 'Enter your HTML code here';
+            }
+        }
+
+        function handleTextarea1Blur() {
+            var textarea = document.getElementById('css-code');
+            {
+                textarea.placeholder = 'Enter your CSS code here';
+            }
+        }
+        function handleTextarea2Blur() {
+            var textarea = document.getElementById('javascript-code');
+            {
+                textarea.placeholder = 'Enter your JAVASCRPIT code here';
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>
